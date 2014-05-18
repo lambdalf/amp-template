@@ -9,8 +9,8 @@ Also see https://github.com/pmonks/lein-amp for the associated plugin that will 
 ## Usage
 
 ```shell
-$ lein new amp my.namespace/projectname
-$ cd projectname
+$ lein new amp <projectName>
+$ cd <projectName>
 ```
 
 ## License
