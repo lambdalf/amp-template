@@ -14,6 +14,8 @@
              ["project.clj" (render "project.clj")]
              ["README.md"   (render "README.md")]
              ["LICENSE"     (render "LICENSE")]
+             "amp"
+             ["amp/module.properties" (render "module.properties")]
              "amp/web"
              "amp/web/css/{{sanitized}}"
              "amp/web/images/{{sanitized}}"
