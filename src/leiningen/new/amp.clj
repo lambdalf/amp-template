@@ -24,14 +24,14 @@
              "amp"
              ["amp/module.properties" (render "module.properties" data)]
              "amp/web"
-             "amp/web/css/{{sanitized}}"
-             "amp/web/images/{{sanitized}}"
-             "amp/web/scripts/{{sanitized}}"
+             "amp/web/css/{{namespace}}"
+             "amp/web/images/{{namespace}}"
+             "amp/web/scripts/{{namespace}}"
              "amp/config"
-             "amp/config/alfresco/extension/templates/webscripts"
+             "amp/config/alfresco/extension/templates/webscripts/{{namespace}}"
              "amp/module"
              ["amp/module/module-context.xml" (render "module-context.xml" data)]
              "amp/module/context"
              "amp/licenses"
-             "src/{{sanitized}}"
-             "test/{{sanitized}}")))
+             ["src/{{nested-dirs}}.clj" (render "core.clj" data)]
+             ["test/{{nested-dirs}}_test.clj" (render "test.clj" data)])))
