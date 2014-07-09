@@ -21,17 +21,19 @@
              ["project.clj" (render "project.clj" data)]
              ["README.md"   (render "README.md" data)]
              ["LICENSE"     (render "LICENSE" data)]
-             "amp"
-             ["amp/module.properties" (render "module.properties" data)]
-             "amp/web"
-             "amp/web/css/{{namespace}}"
-             "amp/web/images/{{namespace}}"
-             "amp/web/scripts/{{namespace}}"
-             "amp/config"
-             "amp/config/alfresco/extension/templates/webscripts/{{namespace}}"
-             "amp/module"
-             ["amp/module/module-context.xml" (render "module-context.xml" data)]
-             "amp/module/context"
-             "amp/licenses"
-             ["src/{{nested-dirs}}.clj" (render "core.clj" data)]
+             "src"
+             "src/amp"
+             ["src/amp/module.properties" (render "module.properties" data)]
+             "src/amp/web"
+             "src/amp/web/css/{{namespace}}"
+             "src/amp/web/images/{{namespace}}"
+             "src/amp/web/scripts/{{namespace}}"
+             "src/amp/config"
+             "src/amp/config/alfresco/extension/templates/webscripts/{{namespace}}"
+             "src/amp/module"
+             ["src/amp/module/module-context.xml" (render "module-context.xml" data)]
+             "src/amp/module/context"
+             "src/amp/licenses"
+             "src/clojure"
+             ["src/clojure/{{nested-dirs}}.clj" (render "core.clj" data)]
              ["test/{{nested-dirs}}_test.clj" (render "test.clj" data)])))
