@@ -1,4 +1,4 @@
-(defproject amp/lein-template "0.5.0"
+(defproject amp/lein-template "0.6.0-SNAPSHOT"
   :description "Leiningen template for AMP (Alfresco Module Package) projects."
   :url "https://github.com/lambdalf/amp-template"
   :license {:name "Eclipse Public License"
