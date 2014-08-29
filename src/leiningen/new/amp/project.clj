@@ -8,7 +8,7 @@
   :profiles { :dev { :plugins [[lein-amp "0.4.0"]] }
               :provided { :dependencies [
                                           [org.clojure/clojure "1.6.0"]
-;                                          [org.clojars.lambdalf/lambdalf "0.1.0"]   ; Not yet available on clojars...
+                                          [org.clojars.lambdalf/lambdalf "0.1.0"]
                                         ] }}
   :source-paths    ["src/clojure"]
   :resource-paths  ["src/resource"]
