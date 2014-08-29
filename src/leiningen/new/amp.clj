@@ -7,16 +7,20 @@
 (defn amp
   "The lein-new template for Alfresco Module Package (AMP) projects."
   [name]
-  (let [render  (renderer "amp")
-        main-ns (multi-segment (sanitize-ns name))
-        data    { :raw-name    name
-                  :sanitized-name (sanitize name)
-                  :name        (project-name name)
-                  :namespace   main-ns
-                  :nested-dirs (name-to-path main-ns)
-                  :year        (year) }]
+  (let [render         (renderer "amp")
+        main-ns        (multi-segment (sanitize-ns name))
+        sanitized-name (sanitize name)
+        module-id      (clojure.string/replace sanitized-name "/" ".")
+        data           { :raw-name       name
+                         :sanitized-name sanitized-name
+                         :name           (project-name name)
+                         :namespace      main-ns
+                         :nested-dirs    (name-to-path main-ns)
+                         :year           (year)
+                         :module-id      module-id }]
     (main/info "Generating a project called" name "based on the 'amp' template.")
     (main/info "To see other templates (app, plugin, etc), try `lein help new`.")
+    (main/info "Module id for this AMP is" module-id)
     (->files data
              ; Standard project files
              [".gitignore"  (render "gitignore" data)]
@@ -32,16 +36,16 @@
              "src/resource"
 
              ; AMP specific project structure
-             "src/resource/alfresco/extension/templates/webscripts/{{sanitized-name}}"
-             "src/resource/alfresco/module/{{sanitized-name}}"
-             ["src/resource/alfresco/module/{{sanitized-name}}/module-context.xml" (render "module-context.xml" data)]
-             "src/resource/alfresco/module/{{sanitized-name}}/context"
+             "src/resource/alfresco/extension/templates/webscripts/{{module-id}}"
+             "src/resource/alfresco/module/{{module-id}}"
+             ["src/resource/alfresco/module/{{module-id}}/module-context.xml" (render "module-context.xml" data)]
+             "src/resource/alfresco/module/{{module-id}}/context"
              "src/resource/licenses"
 
              "src/amp"
              ["src/amp/module.properties" (render "module.properties" data)]
              "src/resource/META-INF/resources"
-             "src/resource/META-INF/resources/html/{{sanitized-name}}"
-             "src/resource/META-INF/resources/css/{{sanitized-name}}"
-             "src/resource/META-INF/resources/images/{{sanitized-name}}"
-             "src/resource/META-INF/resources/scripts/{{sanitized-name}}")))
+             "src/resource/META-INF/resources/html/{{module-id}}"
+             "src/resource/META-INF/resources/css/{{module-id}}"
+             "src/resource/META-INF/resources/images/{{module-id}}"
+             "src/resource/META-INF/resources/js/{{module-id}}")))
