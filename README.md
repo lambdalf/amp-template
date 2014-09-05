@@ -11,6 +11,7 @@ Also see https://github.com/lambdalf/lein-amp for the associated plugin that wil
 ```shell
 $ lein new amp <projectName>
 $ cd <projectName>
+$ lein deps
 ```
 
 ## License
